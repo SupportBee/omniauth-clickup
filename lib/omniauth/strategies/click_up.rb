@@ -2,7 +2,7 @@ require 'omniauth-oauth2'
 
 module OmniAuth
   module Strategies
-    class ClickUp < OmniAuth::Strategies::OAuth
+    class ClickUp < OmniAuth::Strategies::OAuth2
       # Give your strategy a name.
       option :name, "click_up"
 
@@ -20,7 +20,6 @@ module OmniAuth
       # or as a URI parameter). This may not be possible with all
       # providers.
       def request_phase
-        binding.pry
         super
       end
 
@@ -29,24 +28,20 @@ module OmniAuth
       end
 
       uid do
-        request.params['user_id']
+        raw_info['user']['id']
       end
 
       info do
-        {
-            :name => raw_info['name'],
-            :location => raw_info['city']
-        }
+        raw_info
       end
 
       extra do
-        {
-            'raw_info' => raw_info
-        }
+        raw_info
       end
 
       def raw_info
-        @raw_info ||= JSON.load(access_token.get('/user.json')).body
+        access_token.options[:header_format] = "%s"
+        @raw_info ||= JSON.load(access_token.get('user').body)
       end
     end
   end
