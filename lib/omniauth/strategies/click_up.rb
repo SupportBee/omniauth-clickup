@@ -19,6 +19,15 @@ module OmniAuth
       # additional calls (if the user id is returned with the token
       # or as a URI parameter). This may not be possible with all
       # providers.
+      def request_phase
+        binding.pry
+        super
+      end
+
+      def callback_phase
+        super
+      end
+
       uid do
         request.params['user_id']
       end
