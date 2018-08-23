@@ -9,9 +9,9 @@ module OmniAuth
       # This is where you pass the options you would pass when
       # initializing your consumer from the OAuth gem.
       option :client_options, {
-          site: "https://api.clickup.com/api/v1/",
-          authorize_url: "https://app.clickup.com/api",
-          token_url: "https://api.clickup.com/api/v1/oauth/token"
+        site: "https://api.clickup.com/api/v1/",
+        authorize_url: "https://app.clickup.com/api",
+        token_url: "https://api.clickup.com/api/v1/oauth/token"
       }
 
       # These are called after authentication has succeeded. If
