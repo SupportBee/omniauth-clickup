@@ -12,10 +12,10 @@ Add the line below to your Gemfile
 gem 'omniauth-clickup', git: "https://github.com/SupportBee/omniauth-clickup"
 ```
 
-Create an OAuth application in ClickUp and obtain a Client ID and Client Secret
+Register your application with ClickUp and obtain a Client ID and Client Secret
 
 1. Sign into your ClickUp dashboard, visit the Settings > Integrations page and click on the "clickup API" integration
-2. Click on "Create an App" link, enter a name for your App, enter `https://mywebsite.com/auth/click_up/callback` as the Redirect URL (replace `mywebsite.com` with the actual domain of your website when doing so) and click on "Create App"
+2. Click on "Create an App" link, enter your app's name, enter `https://mywebsite.com/auth/click_up/callback` as the Redirect URL (replace `mywebsite.com` with the actual domain of your website when doing so) and click on "Create App"
 3. Copy the Client ID and Client Secret
 
 Create an initializer `config/initializers/omniauth.rb` and add the lines below
