@@ -1,6 +1,6 @@
 # omniauth-clickup
 
-This is the OmniAuth strategy for authenticating to [ClickUp](https://www.clickup.com)
+Omniauth strategy for [ClickUp](https://www.clickup.com) OAuth
 
 To use it, you'll need to create an Oauth Application in the Team settings page of Clickup web app and copy the Client ID and Client Secret.
 
